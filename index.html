@@ -4,6 +4,13 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>이정훈 | 동래구의원 후보 (온천2·3동)</title>
+  <meta property="og:title" content="기호 2-나번 이정훈 | 동래구의원 후보 (온천2·3동)"/>
+  <meta property="og:description" content="럭키가 키운 청년, 든든한 동래사람 — 정직하게! 유능하게! 럭키맨!"/>
+  <meta property="og:image" content="thumbnail.jpg"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="thumbnail.jpg"/>
+  <link rel="icon" href="thumbnail.jpg" type="image/jpeg"/>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif;background:#fff;color:#222;}
@@ -16,49 +23,30 @@
     .nav-links a{text-decoration:none;color:#333;font-size:.87rem;font-weight:700;transition:color .2s;}
     .nav-links a:hover{color:#E61E2B;}
 
-    /* ── HERO ── */
+    /* HERO */
     #hero{min-height:100vh;display:flex;align-items:stretch;padding-top:62px;background:#fff;}
     .hero-inner{display:flex;width:100%;max-width:1400px;margin:0 auto;}
 
-    /* 좌측 사진 */
-    /* 히어로 좌측: 아파트 블러 배경 + 후보자 사진 오버레이 */
-    .h-photo{flex:0 0 46%;position:relative;overflow:hidden;background:#f5e8e9;}
-    /* 아파트 블러 배경 */
-    .h-photo .apt-bg{position:absolute;inset:0;width:100%;height:100%;
-        object-fit:cover;object-position:center;
-        filter:blur(6px) brightness(0.75);transform:scale(1.08);display:block;}
-    /* 어두운 그라디언트 오버레이 */
-    .h-photo::before{content:'';position:absolute;inset:0;
-        background:linear-gradient(to right, rgba(0,0,0,.18) 0%, rgba(0,0,0,.05) 100%);
-        z-index:1;}
-    /* 후보자 사진 */
-    .h-photo .cand-img{position:absolute;top:0;left:0;width:100%;height:100%;
-        object-fit:cover;object-position:top center;z-index:2;display:block;
-        filter:drop-shadow(0 8px 32px rgba(0,0,0,.3));}
-    .h-photo .no-img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);
-        z-index:2;width:100%;height:100%;display:flex;flex-direction:column;
-        align-items:center;justify-content:center;color:#eee;font-size:.9rem;gap:10px;}
+    /* 후보자 사진 — 아파트 배경 없음 */
+    .h-photo{flex:0 0 46%;position:relative;overflow:hidden;background:#E61E2B;}
+    .h-photo .cand-img{
+      position:absolute;top:0;left:0;width:100%;height:100%;
+      object-fit:contain;
+      object-position:center;
+      z-index:1;display:block;
+    }
+    .h-photo .no-img{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;
+        align-items:center;justify-content:center;color:#fff;font-size:.9rem;gap:10px;}
     .h-photo .no-img span{font-size:5rem;}
-    /* 사선 오버레이 */
     .h-photo::after{content:'';position:absolute;top:0;right:-1px;width:80px;height:100%;
-        background:#fff;clip-path:polygon(100% 0,100% 100%,0 100%);z-index:3;}
+        background:#fff;clip-path:polygon(100% 0,100% 100%,0 100%);z-index:2;}
 
-    /* 우측 텍스트 */
     .h-text{flex:1;display:flex;flex-direction:column;justify-content:center;
         padding:64px 60px 64px 52px;background:#fff;}
     .h-badge{display:inline-flex;align-items:center;gap:6px;background:#E61E2B;color:#fff;
         font-size:.74rem;font-weight:800;padding:5px 14px;border-radius:20px;
         margin-bottom:22px;letter-spacing:.04em;width:fit-content;}
-    .h-num{font-size:1rem;font-weight:700;color:#999;margin-bottom:6px;letter-spacing:.02em;}
-    .h-name{font-size:4.5rem;font-weight:900;color:#111;line-height:1;
-        margin-bottom:6px;letter-spacing:-.03em;}
     .h-pos{font-size:.98rem;color:#666;margin-bottom:24px;}
-    .h-slogan{font-size:1.45rem;font-weight:900;color:#E61E2B;
-        margin-bottom:18px;line-height:1.35;}
-    .h-desc{font-size:.93rem;color:#444;line-height:1.75;margin-bottom:28px;max-width:400px;}
-    .h-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
-    .h-tags span{border:1.5px solid #E61E2B;color:#E61E2B;font-size:.8rem;
-        font-weight:700;padding:5px 14px;border-radius:20px;}
     .h-btns{display:flex;gap:12px;flex-wrap:wrap;}
     .btn-r{display:inline-block;background:#E61E2B;color:#fff;padding:14px 32px;
         border-radius:8px;text-decoration:none;font-weight:700;font-size:.95rem;transition:background .2s;}
@@ -82,7 +70,7 @@
     .bar{width:48px;height:4px;background:#E61E2B;margin:10px auto 16px;border-radius:2px;}
     .sec-s{text-align:center;color:#666;margin-bottom:48px;font-size:.93rem;}
 
-    /* ── ABOUT (럭키아파트 이미지 활용) ── */
+    /* ABOUT */
     #about{background:#fff;}
     .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden;
         box-shadow:0 8px 40px rgba(0,0,0,.1);}
@@ -99,7 +87,7 @@
     .aitem h3{font-size:.95rem;font-weight:800;color:#111;margin-bottom:5px;}
     .aitem p{font-size:.87rem;color:#555;line-height:1.62;}
 
-    /* ── PROFILE ── */
+    /* PROFILE */
     #profile{background:#fafafa;}
     .profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
     .pc{background:#fff;border-radius:14px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,.07);}
@@ -110,7 +98,7 @@
     .pc ul li:last-child{border-bottom:none;}
     .pc ul li::before{content:"▪";color:#E61E2B;flex-shrink:0;margin-top:2px;}
 
-    /* ── PROMISES (이미지 카드 포함) ── */
+    /* PROMISES */
     #promises{background:#fff;}
     .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
     .pcard{background:#fff;border-radius:14px;overflow:hidden;
@@ -125,7 +113,7 @@
     .pcard .pbody h3{font-size:.9rem;font-weight:800;color:#E61E2B;margin-bottom:8px;}
     .pcard .pbody p{font-size:.85rem;color:#444;line-height:1.62;}
 
-    /* ── CONTACT ── */
+    /* CONTACT */
     #contact{background:#E61E2B;}
     #contact .sec-t{color:#fff;}
     #contact .sec-t em{color:rgba(255,255,255,.7);}
@@ -137,104 +125,64 @@
     .citem .ci{font-size:1.5rem;flex-shrink:0;}
     .citem h4{font-size:.76rem;color:rgba(255,255,255,.7);margin-bottom:4px;}
     .citem p{font-size:.92rem;color:#fff;font-weight:600;}
-    .clinks{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap;justify-content:center;}
-    .clinks a{background:rgba(255,255,255,.18);color:#fff;text-decoration:none;
-        padding:10px 20px;border-radius:8px;font-weight:700;font-size:.88rem;transition:background .2s;}
-    .clinks a:hover{background:rgba(255,255,255,.32);}
 
     /* FOOTER */
     footer{background:#111;color:rgba(255,255,255,.5);text-align:center;
         padding:26px 20px;font-size:.8rem;line-height:1.9;}
     footer strong{color:#E61E2B;}
 
+    /* 모바일 */
     @media(max-width:900px){
-      /* NAV */
       nav{padding:0 16px;}
       .nav-links{gap:12px;}
       .nav-links a{font-size:.78rem;}
-
-      /* HERO: 사진 위 / 텍스트 아래 세로 배치 */
       #hero{min-height:auto;padding-top:62px;}
       .hero-inner{flex-direction:column;}
-
-      /* 사진 패널: 충분한 높이 확보, 얼굴 상단 고정 */
       .h-photo{
-        flex:none;
-        width:100%;
-        height:55vw;          /* 화면 너비의 55% 높이 */
-        min-height:240px;
-        max-height:380px;
+        flex:none;width:100%;
+        height:90vw;        /* 세로 포스터 안 잘리게 */
+        min-height:300px;
+        max-height:500px;
       }
-      .h-photo .cand-img{
-        object-position:top center;  /* 얼굴 상단 고정 */
-      }
-      /* 사선 오버레이 제거 (세로 배치시 불필요) */
+      .h-photo .cand-img{object-fit:contain;object-position:center;}
       .h-photo::after{display:none;}
-
-      /* 텍스트 패널 */
       .h-text{padding:28px 22px 36px;}
-
-      /* 럭키맨 타이틀 크기 축소 */
       .lucky-main{font-size:3rem;}
       .lucky-trophy{font-size:2.4rem;}
       .lucky-num,.lucky-name-block{font-size:2rem;}
-
-      /* 기타 섹션 */
       .about-wrap,.profile-grid,.promise-grid,.cgrid{grid-template-columns:1fr;}
     }
-
-    /* 작은 화면 (375px 이하) 추가 대응 */
     @media(max-width:400px){
-      .h-photo{height:92vw;min-height:280px;}
+      .h-photo{height:95vw;min-height:280px;}
       .lucky-main{font-size:2.4rem;}
       .lucky-num,.lucky-name-block{font-size:1.7rem;}
       .nav-links{gap:8px;}
       .nav-links a{font-size:.72rem;}
     }
 
-    /* ── LUCKY MAN 히어로 타이틀 ── */
-    .lucky-eyebrow{
-      font-size:1.05rem;font-weight:800;color:#E61E2B;
-      letter-spacing:.18em;text-transform:uppercase;
-      margin-bottom:4px;
-    }
-    .lucky-main{
-      font-size:5.2rem;font-weight:900;color:#E61E2B;
-      line-height:1;letter-spacing:-.03em;
-      margin-bottom:6px;
+    /* LUCKY MAN 타이틀 */
+    .lucky-eyebrow{font-size:1.05rem;font-weight:800;color:#E61E2B;
+      letter-spacing:.18em;text-transform:uppercase;margin-bottom:4px;}
+    .lucky-main{font-size:5.2rem;font-weight:900;color:#E61E2B;
+      line-height:1;letter-spacing:-.03em;margin-bottom:6px;
       text-shadow:2px 2px 0 rgba(230,30,43,.15);
-      display:flex;align-items:center;gap:10px;
-    }
+      display:flex;align-items:center;gap:10px;}
     .lucky-trophy{font-size:3.8rem;line-height:1;}
     .lucky-sub-row{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;}
-    .lucky-num{
-      font-size:3.2rem;font-weight:900;color:#111;
+    .lucky-num{font-size:3.2rem;font-weight:900;color:#111;
       line-height:1;letter-spacing:-.02em;
-      border-right:3px solid #E61E2B;padding-right:14px;
-    }
-    .lucky-name-block{
-      font-size:3.2rem;font-weight:900;color:#111;
-      line-height:1;letter-spacing:-.02em;
-    }
+      border-right:3px solid #E61E2B;padding-right:14px;}
+    .lucky-name-block{font-size:3.2rem;font-weight:900;color:#111;
+      line-height:1;letter-spacing:-.02em;}
     .lucky-tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 16px;}
-    .lt-red{
-      background:#E61E2B;color:#fff;
-      font-size:.82rem;font-weight:800;
-      padding:5px 16px;border-radius:20px;letter-spacing:.04em;
-    }
-    .lucky-desc{
-      font-size:.93rem;color:#444;line-height:1.8;
-      border-left:3px solid #E61E2B;padding-left:14px;
-    }
-    @media(max-width:900px){
-      .lucky-main{font-size:3.5rem;}
-      .lucky-num,.lucky-name-block{font-size:2.3rem;}
-    }
+    .lt-red{background:#E61E2B;color:#fff;font-size:.82rem;font-weight:800;
+      padding:5px 16px;border-radius:20px;letter-spacing:.04em;}
+    .lucky-desc{font-size:.93rem;color:#444;line-height:1.8;
+      border-left:3px solid #E61E2B;padding-left:14px;}
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">🔶 국민의힘 | 기호 2-나번 이정훈</div>
   <div class="nav-links">
@@ -246,21 +194,15 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
     <div class="h-photo">
-      <!-- 아파트 블러 배경 -->
-      <img class="apt-bg" src="lucky_apt.jpg" alt="럭키아파트 배경"/>
-      <!-- 후보자 사진 (전면) -->
       <img class="cand-img" src="candidate.jpg" alt="이정훈 후보"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="no-img" style="display:none"><span>👤</span><small>candidate.jpg</small></div>
     </div>
     <div class="h-text">
       <div class="h-badge">🔶 국민의힘 &nbsp;|&nbsp; 동래구의원선거 온천2·3동</div>
-
-      <!-- 럭키맨 강조 타이틀 -->
       <div class="lucky-eyebrow">럭키가 키운</div>
       <div class="lucky-main">럭키맨<span class="lucky-trophy">🏆</span></div>
       <div class="lucky-sub-row">
@@ -268,20 +210,17 @@
         <span class="lucky-name-block">이정훈</span>
       </div>
       <div class="h-pos">동래구의원 후보 (온천2·3동)</div>
-
       <div class="lucky-tags">
         <span class="lt-red">정직하게!</span>
         <span class="lt-red">유능하게!</span>
         <span class="lt-red">럭키맨!</span>
       </div>
-
       <div class="lucky-desc">
         럭키아파트에서 20년을 살아온 진짜 청년,<br/>
         <strong>든든한 동래사람</strong>이 되겠습니다.<br/>
         국회에서 다져온 실무 경험과 조경 전문성으로<br/>
         온천2·3동의 가치를 <strong>2배</strong>로 높이겠습니다.
       </div>
-
       <div class="h-btns" style="margin-top:28px;">
         <a href="#promises" class="btn-r">📋 공약 보기</a>
         <a href="#contact" class="btn-o">📞 연락하기</a>
@@ -290,7 +229,6 @@
   </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="mqw">
   <div class="mqi">
     <span>정직하게!</span><span>유능하게!</span><span>럭키맨!</span>
@@ -302,7 +240,6 @@
   </div>
 </div>
 
-<!-- ABOUT — 럭키아파트 사진 활용 -->
 <section id="about">
   <div class="container">
     <div class="sec-t">럭키가 키운 <em>진짜 청년</em></div>
@@ -310,9 +247,8 @@
     <p class="sec-s">럭키아파트에서 나고 자라며 주민들의 불편함을 누구보다 잘 아는 이정훈 후보</p>
     <div class="about-wrap">
       <div class="about-img">
-        <!-- 럭키아파트 사진: lucky_apt.jpg -->
         <img src="lucky_apt.jpg" alt="럭키아파트"
-             onerror="this.style.display='none';this.parentElement.style.background='#fde8ea';this.parentElement.querySelector('.img-label').style.background='none'"/>
+             onerror="this.style.display='none';this.parentElement.style.background='#fde8ea'"/>
         <div class="img-label">🏘️ 럭키아파트 — 20년을 함께한 우리 동네</div>
       </div>
       <div class="about-right">
@@ -345,7 +281,6 @@
   </div>
 </section>
 
-<!-- PROFILE -->
 <section id="profile">
   <div class="container">
     <div class="sec-t">주요 <em>경력</em></div>
@@ -372,15 +307,12 @@
   </div>
 </section>
 
-<!-- PROMISES — 이미지 카드 활용 -->
 <section id="promises">
   <div class="container">
     <div class="sec-t">내일을 그리는 <em>공약</em></div>
     <div class="bar"></div>
     <p class="sec-s">말로만 하는 정치가 아니라, 현장을 알고 정확한 시각으로 동래구의 발전을 책임지겠습니다.</p>
     <div class="promise-grid">
-
-      <!-- 재개발: 집 모형 이미지 -->
       <div class="pcard">
         <div class="pimg">
           <img src="house.jpg" alt="재개발"
@@ -392,8 +324,6 @@
           <p>주민들의 오랜 염원인 재개발! 정확하고 유능한 시각으로 명품 주거 단지를 위한 밑그림을 확실하게 지원하겠습니다.</p>
         </div>
       </div>
-
-      <!-- 공간기획: 온천천 벚꽃 이미지 -->
       <div class="pcard">
         <div class="pimg">
           <img src="oncheon_river.jpg" alt="쾌적한 공간"
@@ -405,8 +335,6 @@
           <p>조경학 전공의 전문성으로 동래를 쾌적한 명품 공간으로 만드는 데 기여하겠습니다.</p>
         </div>
       </div>
-
-      <!-- 아동안전 -->
       <div class="pcard">
         <div class="pimg"><div class="pno-img">🧒</div></div>
         <div class="pbody">
@@ -414,8 +342,6 @@
           <p>내산초등학교 졸업생으로서, 선배의 마음으로 아이들이 안전하게 다닐 수 있는 환경을 만들겠습니다.</p>
         </div>
       </div>
-
-      <!-- 소통 -->
       <div class="pcard">
         <div class="pimg"><div class="pno-img">📢</div></div>
         <div class="pbody">
@@ -423,8 +349,6 @@
           <p>복잡한 민원을 소통하며, 주민들의 생생한 목소리를 정책에 반영하는 든든한 소통 창구 역할을 수행하겠습니다.</p>
         </div>
       </div>
-
-      <!-- 국회연계 -->
       <div class="pcard">
         <div class="pimg"><div class="pno-img">🏛️</div></div>
         <div class="pbody">
@@ -432,8 +356,6 @@
           <p>서지영 국회의원과 원팀으로 호흡을 맞추며 동래구에 필요한 정책을 국회 차원에서 적극 뒷받침하겠습니다.</p>
         </div>
       </div>
-
-      <!-- 청년 -->
       <div class="pcard">
         <div class="pimg"><div class="pno-img">💪</div></div>
         <div class="pbody">
@@ -441,12 +363,10 @@
           <p>동래에서 나고 자란 청년으로서, 청년들이 정착하고 싶은 활력 있는 동래구를 만들겠습니다.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="sec-t">이정훈 후보 <em>연락처</em></div>
